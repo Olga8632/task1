@@ -1,0 +1,18 @@
+def circular_array_path(n, m):
+    path = []  # Инициализируем путь
+
+    current_index = 0  # Начинаем с первого элемента
+    for _ in range(n):
+        path.append(current_index + 1)  # Добавляем текущий элемент в путь
+        current_index = (current_index + m) % n  # Определяем индекс следующего элемента
+
+    return path
+
+# Функция для проверки результата
+def print_path(n, m):
+    path = circular_array_path(n, m)
+    print("Путь для n =", n, "и m =", m, ":", path)
+
+# Примеры использования
+print_path(10, 3)
+print_path(7, 2)
